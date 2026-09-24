@@ -1,0 +1,21 @@
+<resources>
+    <color name="Primary50">#FF5500</color>
+    <color name="Primary95">#FFEDD3</color>
+    <color name="Primary99">#FFF7EC</color>
+    <color name="Secondary30">#6B23A6</color>
+    <color name="Neutral10">#17181C</color>
+    <color name="Neutral20">#2E3138</color>
+    <color name="Neutral50">#737A8C</color>
+    <color name="Neutral60">#8F94A3</color>
+    <color name="Neutral80">#C7CAD1</color>
+    <color name="Neutral95">#EEEFF1</color>
+    <color name="Neutral99">#F4F4F6</color>
+    <color name="White">#FFFFFF</color>
+    <color name="Black">#000000</color>
+    <color name="ErrorBg">#F3DCE2</color>
+    <color name="ErrorText">#9B0654</color>
+    <color name="SuccessBg">#C2F3E4</color>
+    <color name="SuccessText">#416764</color>
+    <color name="Red">#FF3B30</color>
+    <color name="Green">#34C759</color>
+</resources>
