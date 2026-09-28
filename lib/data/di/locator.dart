@@ -1,4 +1,5 @@
 import 'package:base_project/data/api/api_service.dart';
+import 'package:base_project/data/api/socket_service.dart';
 import 'package:base_project/data/storage/storage.dart';
 import 'package:base_project/presentation/service/connectivity_service.dart';
 import 'package:base_project/presentation/service/date_time.dart';
@@ -17,7 +18,10 @@ abstract class Locator {
     getIt.registerLazySingleton<StorageService>(() => StorageService());
     getIt.registerLazySingleton<ToastService>(() => ToastService());
     getIt.registerLazySingleton<ApiService>(() => ApiService());
-    getIt.registerLazySingleton<ConnectivityService>(() => ConnectivityService());
+    getIt.registerLazySingleton<SocketService>(() => SocketService());
+    getIt.registerLazySingleton<ConnectivityService>(
+      () => ConnectivityService(),
+    );
     getIt.registerLazySingleton<DateTimeService>(() => DateTimeService());
     getIt.registerLazySingleton<MiscService>(() => MiscService());
     getIt.registerLazySingleton<EventBusService>(() => EventBusService());
@@ -25,4 +29,5 @@ abstract class Locator {
 }
 
 /// Context of the root navigator. Use only when no local context is available.
-BuildContext get appContext => GetIt.I<NavigationService>().navigatorKey.currentContext!;
+BuildContext get appContext =>
+    GetIt.I<NavigationService>().navigatorKey.currentContext!;

@@ -1,4 +1,5 @@
 import 'package:base_project/data/storage/storage.dart';
+import 'package:base_project/data/api/socket_service.dart';
 import 'package:base_project/presentation/service/date_time.dart';
 import 'package:base_project/presentation/service/misc.dart';
 import 'package:base_project/presentation/service/navigation.dart';
@@ -10,6 +11,7 @@ import 'package:get_it/get_it.dart';
 mixin CommonDi {
   NavigationService get navigation => GetIt.I<NavigationService>();
   StorageService get storage => GetIt.I<StorageService>();
+  SocketService get socket => GetIt.I<SocketService>();
   ToastService get toast => GetIt.I<ToastService>();
   DateTimeService get dateTime => GetIt.I<DateTimeService>();
   MiscService get misc => GetIt.I<MiscService>();
