@@ -26,5 +26,6 @@ export 'package:base_project/presentation/service/misc.dart';
 export 'package:base_project/presentation/service/navigation.dart';
 export 'package:base_project/presentation/service/toast.dart';
 export 'package:base_project/string/string.dart';
+export 'package:base_project/util/enum.dart';
 export 'package:base_project/util/extensions.dart';
 export 'package:base_project/util/text_styles.dart';

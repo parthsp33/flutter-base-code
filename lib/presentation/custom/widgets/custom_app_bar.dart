@@ -53,7 +53,7 @@ class CustomAppBar extends StatelessWidget
               child: showBack
                   ? _circle(
                       SvgPicture.asset(
-                        'assets/drawables/ic_arrow.svg',
+                        AppImage.backArrow.path,
                         fit: BoxFit.scaleDown,
                       ),
                     ).addOnTap(

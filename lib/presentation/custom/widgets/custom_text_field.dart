@@ -116,8 +116,8 @@ class _CustomTextFieldState extends State<CustomTextField> with TextStyles {
                 ? IconButton(
                     icon: SvgPicture.asset(
                       _obscureText
-                          ? 'assets/drawables/ic_hide_pwd.svg'
-                          : 'assets/drawables/ic_show_pwd.svg',
+                          ? AppImage.hidePassword.path
+                          : AppImage.showPassword.path,
                       width: 24.w,
                       height: 24.h,
                     ),

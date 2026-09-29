@@ -1,4 +1,5 @@
 import 'package:base_project/resources/theme/app_color.dart';
+import 'package:base_project/util/enum.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -15,7 +16,7 @@ mixin class TextStyles {
       color: color,
       height: height,
       fontWeight: fontWeight,
-      fontFamily: 'DMSans',
+      fontFamily: AppFont.dmSans.family,
       decoration: textDecoration,
     );
   }

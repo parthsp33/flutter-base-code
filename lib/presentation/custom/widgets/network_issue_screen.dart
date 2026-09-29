@@ -18,7 +18,7 @@ class NetworkIssueScreen extends BaseWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SvgPicture.asset(
-                  'assets/drawables/img_no_connection.svg',
+                  AppImage.noConnection.path,
                   height: 160.h,
                   width: 160.w,
                 ),

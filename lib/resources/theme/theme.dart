@@ -3,7 +3,7 @@ import '../../util/core_export.dart';
 class AppTheme with TextStyles {
   ThemeData get appTheme => ThemeData(
     useMaterial3: true,
-    fontFamily: 'DMSans',
+    fontFamily: AppFont.dmSans.family,
     colorScheme: ColorScheme.fromSeed(
       seedColor: AppColor.primary50.color,
       primary: AppColor.primary50.color,
