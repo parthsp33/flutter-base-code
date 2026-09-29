@@ -1,5 +1,5 @@
 import 'package:base_project/resources/theme/app_color.dart';
-import 'package:base_project/resources/app_assets.dart';
+import 'package:base_project/resources/theme/app_assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
