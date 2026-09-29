@@ -2,8 +2,11 @@ import 'core_export.dart';
 
 /// Small reusable widget builders. Available in every BaseWidget.
 mixin WidgetUtils on TextStyles {
-  Widget buildDivider({Color color = ColorName.neutral95, double thickness = 1}) {
-    return Divider(color: color, thickness: thickness);
+  Widget buildDivider({Color? color, double thickness = 1}) {
+    return Divider(
+      color: color ?? AppColor.neutral95.color,
+      thickness: thickness,
+    );
   }
 
   Widget buildGradientDivider({
@@ -15,12 +18,18 @@ mixin WidgetUtils on TextStyles {
       height: height,
       width: width,
       decoration: BoxDecoration(
-        gradient: LinearGradient(colors: colors ?? [ColorName.white, ColorName.neutral80]),
+        gradient: LinearGradient(
+          colors: colors ?? [AppColor.white.color, AppColor.neutral80.color],
+        ),
       ),
     );
   }
 
-  Widget textButton({required String text, required VoidCallback onTap, TextStyle? style}) {
+  Widget textButton({
+    required String text,
+    required VoidCallback onTap,
+    TextStyle? style,
+  }) {
     return TextButton(
       style: TextButton.styleFrom(
         padding: EdgeInsets.zero,
@@ -35,7 +44,7 @@ mixin WidgetUtils on TextStyles {
   Widget shadowDecoration({required Widget child, double radius = 16}) {
     return Container(
       decoration: BoxDecoration(
-        color: ColorName.white,
+        color: AppColor.white.color,
         borderRadius: BorderRadius.circular(radius.r),
         boxShadow: [
           BoxShadow(
@@ -55,7 +64,10 @@ mixin WidgetUtils on TextStyles {
       TextSpan(
         children: [
           TextSpan(text: '$title ', style: dmSans900(height: 1.2)),
-          TextSpan(text: coloredTitle, style: dmSans900(height: 1.2, color: ColorName.primary50)),
+          TextSpan(
+            text: coloredTitle,
+            style: dmSans900(height: 1.2, color: AppColor.primary50.color),
+          ),
         ],
       ),
     );

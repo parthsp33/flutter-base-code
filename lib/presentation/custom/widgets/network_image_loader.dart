@@ -22,9 +22,11 @@ class NetworkImageLoader extends StatelessWidget {
     this.borderRadius = BorderRadius.zero,
   });
 
-  static Future<bool> clearImageCache(String imageUrl) => CachedNetworkImage.evictFromCache(imageUrl);
+  static Future<bool> clearImageCache(String imageUrl) =>
+      CachedNetworkImage.evictFromCache(imageUrl);
 
-  Widget get _defaultPlaceholder => Container(height: height, width: width, color: ColorName.neutral95);
+  Widget get _defaultPlaceholder =>
+      Container(height: height, width: width, color: AppColor.neutral95.color);
 
   @override
   Widget build(BuildContext context) {

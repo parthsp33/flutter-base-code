@@ -16,14 +16,21 @@ class NetworkIssueScreen extends BaseWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Assets.drawables.imgNoConnection.svg(height: 160.h, width: 160.w),
+                Assets.drawables.imgNoConnection.svg(
+                  height: 160.h,
+                  width: 160.w,
+                ),
                 48.h.verticalSpace,
-                Text(Strings.noNetwork(), textAlign: TextAlign.center, style: dmSans500(size: 15)),
+                Text(
+                  Strings.noNetwork(),
+                  textAlign: TextAlign.center,
+                  style: dmSans500(size: 15),
+                ),
                 10.h.verticalSpace,
                 Text(
                   Strings.noNetworkMessage(),
                   textAlign: TextAlign.center,
-                  style: dmSans500(size: 13, color: ColorName.neutral60),
+                  style: dmSans500(size: 13, color: AppColor.neutral60.color),
                 ),
               ],
             ).withSymmetricPadding(horizontal: 16.w),

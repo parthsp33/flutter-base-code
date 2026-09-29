@@ -1,4 +1,4 @@
-import 'package:base_project/gen/colors.gen.dart';
+import 'package:base_project/resources/theme/app_color.dart';
 import 'package:base_project/presentation/service/navigation.dart';
 import 'package:base_project/util/app_const.dart';
 import 'package:base_project/util/text_styles.dart';
@@ -8,17 +8,30 @@ import 'package:get_it/get_it.dart';
 
 /// Shows snack bars without context. Uses the root ScaffoldMessenger.
 class ToastService with TextStyles {
-  ScaffoldMessengerState? get _messenger => GetIt.I<NavigationService>().scaffoldMessengerKey.currentState;
+  ScaffoldMessengerState? get _messenger =>
+      GetIt.I<NavigationService>().scaffoldMessengerKey.currentState;
 
   void errorToast(String message) {
-    _show(message, bgColor: ColorName.errorBg, textColor: ColorName.errorText);
+    _show(
+      message,
+      bgColor: AppColor.errorBg.color,
+      textColor: AppColor.errorText.color,
+    );
   }
 
   void successToast(String message) {
-    _show(message, bgColor: ColorName.successBg, textColor: ColorName.successText);
+    _show(
+      message,
+      bgColor: AppColor.successBg.color,
+      textColor: AppColor.successText.color,
+    );
   }
 
-  void actionToast(String message, {required String actionLabel, required VoidCallback onAction}) {
+  void actionToast(
+    String message, {
+    required String actionLabel,
+    required VoidCallback onAction,
+  }) {
     _messenger
       ?..hideCurrentSnackBar()
       ..showSnackBar(
@@ -30,7 +43,11 @@ class ToastService with TextStyles {
       );
   }
 
-  void _show(String message, {required Color bgColor, required Color textColor}) {
+  void _show(
+    String message, {
+    required Color bgColor,
+    required Color textColor,
+  }) {
     if (message.isEmpty) return;
     _messenger
       ?..hideCurrentSnackBar()
@@ -38,7 +55,9 @@ class ToastService with TextStyles {
         SnackBar(
           backgroundColor: bgColor,
           behavior: SnackBarBehavior.floating,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100.r)),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(100.r),
+          ),
           content: Text(message, style: dmSans600(color: textColor)),
           duration: const Duration(milliseconds: AppConst.snackBarDuration),
         ),

@@ -1,7 +1,9 @@
 import '../../../util/core_export.dart';
 
 /// App bar with round back button, center title and optional trailing widget.
-class CustomAppBar extends StatelessWidget with TextStyles implements PreferredSizeWidget {
+class CustomAppBar extends StatelessWidget
+    with TextStyles
+    implements PreferredSizeWidget {
   final String title;
   final bool showBack;
   final VoidCallback? onTapBack;
@@ -22,10 +24,14 @@ class CustomAppBar extends StatelessWidget with TextStyles implements PreferredS
       height: 44.w,
       width: 44.w,
       decoration: BoxDecoration(
-        color: ColorName.white,
+        color: AppColor.white.color,
         shape: BoxShape.circle,
         boxShadow: [
-          BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 5, offset: const Offset(1, 1)),
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.05),
+            blurRadius: 5,
+            offset: const Offset(1, 1),
+          ),
         ],
       ),
       child: child,
@@ -43,9 +49,12 @@ class CustomAppBar extends StatelessWidget with TextStyles implements PreferredS
             SizedBox(
               width: 44.w,
               child: showBack
-                  ? _circle(Assets.drawables.icArrow.svg(fit: BoxFit.scaleDown)).addOnTap(
-                      () => onTapBack != null ? onTapBack!() : GetIt.I<NavigationService>().pop(),
-                    )
+                  ? _circle(Assets.drawables.icArrow.svg(fit: BoxFit.scaleDown))
+                        .addOnTap(
+                          () => onTapBack != null
+                              ? onTapBack!()
+                              : GetIt.I<NavigationService>().pop(),
+                        )
                   : null,
             ),
             Expanded(
@@ -54,10 +63,13 @@ class CustomAppBar extends StatelessWidget with TextStyles implements PreferredS
                 textAlign: TextAlign.center,
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
-                style: dmSans500(size: 20, color: ColorName.black),
+                style: dmSans500(size: 20, color: AppColor.black.color),
               ),
             ),
-            SizedBox(width: 44.w, child: trailing != null ? _circle(trailing!) : null),
+            SizedBox(
+              width: 44.w,
+              child: trailing != null ? _circle(trailing!) : null,
+            ),
           ],
         ).withSymmetricPadding(horizontal: 12.w, vertical: 4.h),
       ),

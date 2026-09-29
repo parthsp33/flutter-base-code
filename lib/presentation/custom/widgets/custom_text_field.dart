@@ -63,9 +63,9 @@ class _CustomTextFieldState extends State<CustomTextField> with TextStyles {
   bool _obscureText = true;
 
   OutlineInputBorder _border(Color color) => OutlineInputBorder(
-        borderSide: BorderSide(color: color, width: 1),
-        borderRadius: BorderRadius.circular(widget.borderRadius.r),
-      );
+    borderSide: BorderSide(color: color, width: 1),
+    borderRadius: BorderRadius.circular(widget.borderRadius.r),
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -73,7 +73,10 @@ class _CustomTextFieldState extends State<CustomTextField> with TextStyles {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         if (widget.isTitleVisible) ...[
-          Text(widget.titleText, style: dmSans400(color: ColorName.neutral20)),
+          Text(
+            widget.titleText,
+            style: dmSans400(color: AppColor.neutral20.color),
+          ),
           6.h.verticalSpace,
         ],
         TextField(
@@ -83,14 +86,15 @@ class _CustomTextFieldState extends State<CustomTextField> with TextStyles {
           onTap: widget.onTap,
           maxLines: widget.isPassword ? 1 : widget.maxLines,
           minLines: widget.minLines,
-          inputFormatters: widget.inputFormatters ?? [NoLeadingSpaceFormatter()],
+          inputFormatters:
+              widget.inputFormatters ?? [NoLeadingSpaceFormatter()],
           keyboardType: widget.keyboardType,
           textInputAction: widget.textInputAction,
           onChanged: widget.onChanged,
           onSubmitted: widget.onSubmitted,
           controller: widget.controller,
-          style: dmSans500(color: ColorName.neutral20),
-          cursorColor: ColorName.neutral20,
+          style: dmSans500(color: AppColor.neutral20.color),
+          cursorColor: AppColor.neutral20.color,
           maxLength: widget.maxLength,
           obscureText: widget.isPassword && _obscureText,
           decoration: InputDecoration(
@@ -98,25 +102,32 @@ class _CustomTextFieldState extends State<CustomTextField> with TextStyles {
             fillColor: widget.fillColor,
             filled: widget.fillColor != null,
             isDense: true,
-            contentPadding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
+            contentPadding: EdgeInsets.symmetric(
+              horizontal: 16.w,
+              vertical: 16.h,
+            ),
             hintText: widget.hintText,
-            hintStyle: dmSans500(color: ColorName.neutral80),
+            hintStyle: dmSans500(color: AppColor.neutral80.color),
             errorText: widget.errorText,
-            errorStyle: dmSans400(size: 12, color: ColorName.red),
+            errorStyle: dmSans400(size: 12, color: AppColor.red.color),
             prefixIcon: widget.prefixIcon,
             suffixIcon: widget.isPassword
                 ? IconButton(
-                    icon: (_obscureText ? Assets.drawables.icHidePwd : Assets.drawables.icShowPwd)
-                        .svg(width: 24.w, height: 24.h),
-                    onPressed: () => setState(() => _obscureText = !_obscureText),
+                    icon:
+                        (_obscureText
+                                ? Assets.drawables.icHidePwd
+                                : Assets.drawables.icShowPwd)
+                            .svg(width: 24.w, height: 24.h),
+                    onPressed: () =>
+                        setState(() => _obscureText = !_obscureText),
                   )
                 : widget.suffixIcon,
-            border: _border(ColorName.neutral80),
-            enabledBorder: _border(ColorName.neutral80),
-            focusedBorder: _border(ColorName.neutral20),
-            disabledBorder: _border(ColorName.neutral95),
-            errorBorder: _border(ColorName.red),
-            focusedErrorBorder: _border(ColorName.red),
+            border: _border(AppColor.neutral80.color),
+            enabledBorder: _border(AppColor.neutral80.color),
+            focusedBorder: _border(AppColor.neutral20.color),
+            disabledBorder: _border(AppColor.neutral95.color),
+            errorBorder: _border(AppColor.red.color),
+            focusedErrorBorder: _border(AppColor.red.color),
           ),
         ),
       ],

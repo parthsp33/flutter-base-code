@@ -16,7 +16,8 @@ class StackLoader extends StatelessWidget {
     this.loadingStates = const [],
   });
 
-  bool get _isLoading => state is Loading || loadingStates.contains(state.runtimeType);
+  bool get _isLoading =>
+      state is Loading || loadingStates.contains(state.runtimeType);
 
   @override
   Widget build(BuildContext context) {
@@ -44,9 +45,15 @@ class Loader extends StatelessWidget {
           child: Container(
             width: 80.w,
             height: 80.w,
-            decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.r), color: ColorName.white),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10.r),
+              color: AppColor.white.color,
+            ),
             alignment: Alignment.center,
-            child: CircularProgressIndicator(color: ColorName.primary50, strokeWidth: 4.w),
+            child: CircularProgressIndicator(
+              color: AppColor.primary50.color,
+              strokeWidth: 4.w,
+            ),
           ),
         ),
       ),

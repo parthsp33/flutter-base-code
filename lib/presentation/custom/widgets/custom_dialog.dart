@@ -14,10 +14,20 @@ class DialogUtils {
     final result = await showDialog<bool>(
       context: appContext,
       builder: (context) => AlertDialog(
-        backgroundColor: ColorName.white,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24.r)),
-        title: Text(title, textAlign: TextAlign.center, style: styles.dmSans700()),
-        content: Text(message, textAlign: TextAlign.center, style: styles.dmSans400()),
+        backgroundColor: AppColor.white.color,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(24.r),
+        ),
+        title: Text(
+          title,
+          textAlign: TextAlign.center,
+          style: styles.dmSans700(),
+        ),
+        content: Text(
+          message,
+          textAlign: TextAlign.center,
+          style: styles.dmSans400(),
+        ),
         actionsPadding: EdgeInsets.fromLTRB(16.w, 0, 16.w, 16.h),
         actions: [
           Row(

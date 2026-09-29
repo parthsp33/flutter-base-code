@@ -4,34 +4,36 @@ import '../../util/core_export.dart';
 
 class AppTheme with TextStyles {
   ThemeData get appTheme => ThemeData(
-        useMaterial3: true,
-        fontFamily: FontFamily.dMSans,
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: ColorName.primary50,
-          primary: ColorName.primary50,
-          brightness: Brightness.light,
-        ),
-        scaffoldBackgroundColor: ColorName.white,
-        appBarTheme: AppBarTheme(
-          backgroundColor: ColorName.white,
-          surfaceTintColor: ColorName.white,
-          elevation: 0,
-          centerTitle: true,
-          titleTextStyle: dmSans600(size: 18, color: ColorName.neutral20),
-          iconTheme: const IconThemeData(color: ColorName.neutral20),
-        ),
-        progressIndicatorTheme: const ProgressIndicatorThemeData(color: ColorName.primary50),
-        dividerTheme: const DividerThemeData(color: ColorName.neutral95),
-        tabBarTheme: TabBarThemeData(
-          indicator: UnderlineTabIndicator(
-            borderSide: BorderSide(width: 3.h, color: ColorName.primary50),
-          ),
-          indicatorSize: TabBarIndicatorSize.label,
-          labelColor: ColorName.primary50,
-          dividerColor: ColorName.neutral95,
-          unselectedLabelColor: ColorName.neutral20,
-          labelStyle: dmSans500(fontWeight: FontWeight.w700),
-          unselectedLabelStyle: dmSans500(),
-        ),
-      );
+    useMaterial3: true,
+    fontFamily: FontFamily.dMSans,
+    colorScheme: ColorScheme.fromSeed(
+      seedColor: AppColor.primary50.color,
+      primary: AppColor.primary50.color,
+      brightness: Brightness.light,
+    ),
+    scaffoldBackgroundColor: AppColor.white.color,
+    appBarTheme: AppBarTheme(
+      backgroundColor: AppColor.white.color,
+      surfaceTintColor: AppColor.white.color,
+      elevation: 0,
+      centerTitle: true,
+      titleTextStyle: dmSans600(size: 18, color: AppColor.neutral20.color),
+      iconTheme: IconThemeData(color: AppColor.neutral20.color),
+    ),
+    progressIndicatorTheme: ProgressIndicatorThemeData(
+      color: AppColor.primary50.color,
+    ),
+    dividerTheme: DividerThemeData(color: AppColor.neutral95.color),
+    tabBarTheme: TabBarThemeData(
+      indicator: UnderlineTabIndicator(
+        borderSide: BorderSide(width: 3.h, color: AppColor.primary50.color),
+      ),
+      indicatorSize: TabBarIndicatorSize.label,
+      labelColor: AppColor.primary50.color,
+      dividerColor: AppColor.neutral95.color,
+      unselectedLabelColor: AppColor.neutral20.color,
+      labelStyle: dmSans500(fontWeight: FontWeight.w700),
+      unselectedLabelStyle: dmSans500(),
+    ),
+  );
 }

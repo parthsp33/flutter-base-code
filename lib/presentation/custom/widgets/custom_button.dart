@@ -39,7 +39,9 @@ class CustomButton extends BaseWidget {
         height: height ?? 51.h,
         width: width ?? double.infinity,
         decoration: BoxDecoration(
-          color: disabled ? ColorName.neutral95 : (bgColor ?? ColorName.primary50),
+          color: disabled
+              ? AppColor.neutral95.color
+              : (bgColor ?? AppColor.primary50.color),
           borderRadius: BorderRadius.circular(100.r),
         ),
         child: Row(
@@ -48,11 +50,21 @@ class CustomButton extends BaseWidget {
             Text(
               text,
               textAlign: TextAlign.center,
-              style: textStyle ?? dmSans500(size: 16, color: disabled ? ColorName.neutral50 : ColorName.white),
+              style:
+                  textStyle ??
+                  dmSans500(
+                    size: 16,
+                    color: disabled
+                        ? AppColor.neutral50.color
+                        : AppColor.white.color,
+                  ),
             ),
             if (isShowLoading) ...[
               12.w.horizontalSpace,
-              CupertinoActivityIndicator(color: ColorName.white, radius: 10.w),
+              CupertinoActivityIndicator(
+                color: AppColor.white.color,
+                radius: 10.w,
+              ),
             ],
           ],
         ),
@@ -85,16 +97,18 @@ class CustomOutlineButton extends BaseWidget {
       height: height ?? 51.h,
       child: OutlinedButton(
         style: OutlinedButton.styleFrom(
-          side: const BorderSide(color: ColorName.neutral50),
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100.r)),
-          backgroundColor: ColorName.white,
+          side: BorderSide(color: AppColor.neutral50.color),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(100.r),
+          ),
+          backgroundColor: AppColor.white.color,
         ),
         onPressed: onTap,
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
             if (icon != null) ...[icon!, 8.w.horizontalSpace],
-            Text(text, style: dmSans600(color: ColorName.neutral20)),
+            Text(text, style: dmSans600(color: AppColor.neutral20.color)),
           ],
         ),
       ),

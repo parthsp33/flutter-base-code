@@ -16,9 +16,18 @@ class NoDataFound extends BaseWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          icon ?? Icon(Icons.content_paste_search_outlined, size: 80.w, color: ColorName.neutral60),
+          icon ??
+              Icon(
+                Icons.content_paste_search_outlined,
+                size: 80.w,
+                color: AppColor.neutral60.color,
+              ),
           16.h.verticalSpace,
-          Text(message ?? Strings.noDataFound(), style: dmSans500(size: 16), textAlign: TextAlign.center),
+          Text(
+            message ?? Strings.noDataFound(),
+            style: dmSans500(size: 16),
+            textAlign: TextAlign.center,
+          ),
         ],
       ),
     );
