@@ -17,7 +17,6 @@ export 'package:base_project/data/api/api_service.dart';
 export 'package:base_project/data/di/common_di.dart';
 export 'package:base_project/data/di/locator.dart';
 export 'package:base_project/data/storage/storage.dart';
-export 'package:base_project/gen/assets.gen.dart';
 export 'package:base_project/resources/theme/app_color.dart';
 export 'package:base_project/presentation/base/api_render_state.dart';
 export 'package:base_project/presentation/base/base_cubit.dart';

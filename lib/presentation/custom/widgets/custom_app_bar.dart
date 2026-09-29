@@ -1,5 +1,7 @@
 import '../../../util/core_export.dart';
 
+import 'package:flutter_svg/flutter_svg.dart';
+
 /// App bar with round back button, center title and optional trailing widget.
 class CustomAppBar extends StatelessWidget
     with TextStyles
@@ -49,12 +51,16 @@ class CustomAppBar extends StatelessWidget
             SizedBox(
               width: 44.w,
               child: showBack
-                  ? _circle(Assets.drawables.icArrow.svg(fit: BoxFit.scaleDown))
-                        .addOnTap(
-                          () => onTapBack != null
-                              ? onTapBack!()
-                              : GetIt.I<NavigationService>().pop(),
-                        )
+                  ? _circle(
+                      SvgPicture.asset(
+                        'assets/drawables/ic_arrow.svg',
+                        fit: BoxFit.scaleDown,
+                      ),
+                    ).addOnTap(
+                      () => onTapBack != null
+                          ? onTapBack!()
+                          : GetIt.I<NavigationService>().pop(),
+                    )
                   : null,
             ),
             Expanded(

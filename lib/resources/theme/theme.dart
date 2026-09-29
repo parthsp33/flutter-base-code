@@ -1,11 +1,9 @@
-import 'package:base_project/gen/fonts.gen.dart';
-
 import '../../util/core_export.dart';
 
 class AppTheme with TextStyles {
   ThemeData get appTheme => ThemeData(
     useMaterial3: true,
-    fontFamily: FontFamily.dMSans,
+    fontFamily: 'DMSans',
     colorScheme: ColorScheme.fromSeed(
       seedColor: AppColor.primary50.color,
       primary: AppColor.primary50.color,

@@ -1,4 +1,5 @@
 import 'package:base_project/util/input_formatter.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../util/core_export.dart';
 
@@ -113,11 +114,13 @@ class _CustomTextFieldState extends State<CustomTextField> with TextStyles {
             prefixIcon: widget.prefixIcon,
             suffixIcon: widget.isPassword
                 ? IconButton(
-                    icon:
-                        (_obscureText
-                                ? Assets.drawables.icHidePwd
-                                : Assets.drawables.icShowPwd)
-                            .svg(width: 24.w, height: 24.h),
+                    icon: SvgPicture.asset(
+                      _obscureText
+                          ? 'assets/drawables/ic_hide_pwd.svg'
+                          : 'assets/drawables/ic_show_pwd.svg',
+                      width: 24.w,
+                      height: 24.h,
+                    ),
                     onPressed: () =>
                         setState(() => _obscureText = !_obscureText),
                   )
